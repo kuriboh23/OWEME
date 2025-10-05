@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:oweme/core/theme.dart';
+import 'package:oweme/features/dashboard/widgets/build_balance_row.dart';
 import 'package:oweme/features/dashboard/widgets/glassmorphic.dart';
 
-class OverallBalanceCard extends StatefulWidget {
-  const OverallBalanceCard({super.key});
-
-  @override
-  State<OverallBalanceCard> createState() => _OverallBalanceCardState();
-}
-
-class _OverallBalanceCardState extends State<OverallBalanceCard> {
-  double totalBalance = 95.0;
+class OverallBalanceCard extends StatelessWidget {
+  final double totalBalance;
+  final double owedAmout;
+  final double oweAmount;
+  const OverallBalanceCard({
+    super.key,
+    required this.totalBalance,
+    required this.owedAmout,
+    required this.oweAmount,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Glassmorphic(
       width: double.infinity,
-      height: 174,
+      height: 175,
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -37,11 +39,11 @@ class _OverallBalanceCardState extends State<OverallBalanceCard> {
                 ),
                 SizedBox(height: 4),
                 Text(
-                  '\$$totalBalance DH',
+                  '$totalBalance DH',
                   style: TextStyle(
                     color: totalBalance >= 0
                         ? AppTheme.textHeadings
-                        : AppTheme.secondaryColor,
+                        : AppTheme.negativeAccent,
                     fontSize: 32,
                     fontFamily: 'Gugi',
                     fontWeight: FontWeight.w700,
@@ -52,15 +54,15 @@ class _OverallBalanceCardState extends State<OverallBalanceCard> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                _buildBalanceRow(
+                BuildBalanceRow(
                   label: "You are owed",
-                  amount: "120 DH",
+                  amount: "$owedAmout DH",
                   color: AppTheme.positiveAccent,
                 ),
-                _buildBalanceRow(
+                BuildBalanceRow(
                   label: "You owe",
-                  amount: "120 DH",
-                  color: AppTheme.primaryAccent,
+                  amount: "$oweAmount DH",
+                  color: AppTheme.negativeAccent,
                 ),
               ],
             ),
@@ -69,35 +71,4 @@ class _OverallBalanceCardState extends State<OverallBalanceCard> {
       ),
     );
   }
-}
-
-Widget _buildBalanceRow({
-  required String label,
-  required String amount,
-  required Color color,
-}) {
-  // ... this helper method does not need to be changed
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text(
-        label,
-        style: const TextStyle(
-          color: AppTheme.textBody,
-          fontSize: 14,
-          fontFamily: 'Gugi',
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      Text(
-        amount,
-        style: TextStyle(
-          color: color,
-          fontSize: 16,
-          fontFamily: 'Gugi',
-          fontWeight: FontWeight.w600,
-        ),
-      ),
-    ],
-  );
 }

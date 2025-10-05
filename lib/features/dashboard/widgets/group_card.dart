@@ -116,7 +116,7 @@ class GroupCard extends StatelessWidget {
                           style: TextStyle(
                             color: isOwed
                                 ? AppTheme.positiveAccent
-                                : AppTheme.primaryAccent, // Use theme color
+                                : AppTheme.negativeAccent, // Use theme color
                             fontSize: 24, // Increased size significantly
                             fontFamily: 'Gugi',
                             fontWeight: FontWeight.w600,

@@ -34,14 +34,14 @@ class Glassmorphic extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
-                  color: AppTheme.textBody.withValues(alpha: 0.13),
+                  color: AppTheme.white.withValues(alpha: 0.16),
                 ),
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    AppTheme.textBody.withValues(alpha: 0.16),
-                    AppTheme.textBody.withValues(alpha: 0.05),
+                    AppTheme.white.withValues(alpha: 0.15),
+                    AppTheme.gray.withValues(alpha: 0.06),
                   ],
                 ),
               ),

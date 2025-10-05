@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:oweme/core/theme.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
-// ignore: must_be_immutable
 class FriendAvatar extends StatelessWidget {
-  String name;
+  final String name;
 
-  FriendAvatar({super.key, required this.name});
+  const FriendAvatar({super.key, required this.name});
 
   String truncateText(String text, int maxLength) {
     if (text.length <= maxLength) {
@@ -32,7 +32,11 @@ class FriendAvatar extends StatelessWidget {
             child: CircleAvatar(
               backgroundColor: AppTheme.white,
               radius: 25, // Adjust size as needed
-              child: Icon(Icons.person, color: AppTheme.primaryColor),
+              child: PhosphorIcon(
+                PhosphorIconsFill.userCircleDashed,
+                color: AppTheme.primaryColor,
+                size: 30,
+              ),
             ),
           ),
           SizedBox(height: 4),

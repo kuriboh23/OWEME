@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static const Color primaryBackground = Color(0xFF1A3A3A);
-  static const Color primaryColor = Color(0xFF224B4B);
-  static const Color primaryAccent = Color(0xFFFF9E00);
-  static const Color secondaryColor = Color(0xFFFF6B6B);
-  static const Color positiveAccent = Color(0xFF66B8A0);
+  static const Color primaryBackground = Color(0xFF252422);
+  static const Color primaryColor = Color(0xFF403d39);
+  static const Color negativeAccent = Color(0xFFE25E2A);
+  static const Color positiveAccent = Color(0xFF78FCB0);
   static const Color textHeadings = Color(0xFFf2e8cf);
-  static const Color textBody = Color(0xFFA8B5B5);
-  static const Color white = Color(0xFFE0E1DD);
+  static const Color textBody = Color(0xFFB5AAA8);
+  static const Color white = Color(0xFFfffcf2);
+  static const Color gray = Color(0xFFccc5b9);
 
   static final ThemeData themeData = ThemeData(
     scaffoldBackgroundColor: primaryBackground,

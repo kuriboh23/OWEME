@@ -1,64 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:oweme/core/theme.dart';
 import 'package:oweme/features/dashboard/widgets/add_friend_button.dart';
 import 'package:oweme/features/dashboard/widgets/friend_avatar.dart';
 import 'package:oweme/features/dashboard/widgets/group_card.dart';
 import 'package:oweme/features/dashboard/widgets/overall_balance_card.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Dashboard extends StatefulWidget {
+  const Dashboard({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Dashboard> createState() => _DashboardState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //Float Action Button
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          Navigator.pushNamed(context, '/addGroup');
-        },
-        label: Text(
-          'Add Group',
-          style: TextStyle(
-            color: AppTheme.primaryBackground,
-            fontFamily: 'Inter',
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        icon: Icon(Icons.add, color: AppTheme.primaryBackground),
-        backgroundColor: AppTheme.white.withAlpha(200),
-      ),
-      // Bottom Nav Bar
-      bottomNavigationBar: Container(
-        color: AppTheme.white,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 6),
-          child: GNav(
-            gap: 8,
-            onTabChange: (index) {
-              print(index);
-            },
-            selectedIndex: 0,
-            tabs: [
-              GButton(icon: Icons.home, text: 'Home'),
-              GButton(icon: Icons.search, text: 'Search'),
-              GButton(icon: Icons.group, text: 'Groups'),
-              GButton(icon: Icons.person, text: 'Profile'),
-            ],
-            tabBackgroundColor: AppTheme.primaryColor.withValues(alpha: 0.3),
-            backgroundColor: AppTheme.white,
-            color: AppTheme.primaryBackground,
-            activeColor: AppTheme.primaryColor,
-            padding: EdgeInsets.all(12),
-          ),
-        ),
-      ),
-
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
@@ -80,23 +38,25 @@ class _HomePageState extends State<HomePage> {
                       color: AppTheme.white,
                     ),
                   ),
-                  InkWell(
-                    onTap: () {
-                      print('Notification Clicked');
-                    },
+                  GestureDetector(
+                    onTap: () {},
                     child: CircleAvatar(
                       backgroundColor: AppTheme.white,
                       child: Icon(
-                        Icons.notifications,
+                        PhosphorIcons.bell_simple_fill,
                         color: AppTheme.primaryColor,
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 32),
+              SizedBox(height: 34),
               // Dashboard Card
-              OverallBalanceCard(),
+              OverallBalanceCard(
+                totalBalance: 220.0,
+                oweAmount: 45.0,
+                owedAmout: 135.0,
+              ),
               SizedBox(height: 24),
               Padding(
                 padding: const EdgeInsets.only(left: 6.0),
@@ -110,10 +70,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-
+      
               // Friends
               SizedBox(
-                height: 104,
+                height: 100,
                 child: ListView(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   scrollDirection: Axis.horizontal,
@@ -133,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              SizedBox(height: 6),
+              SizedBox(height: 14),
               Padding(
                 padding: const EdgeInsets.only(left: 6.0),
                 child: Row(
@@ -148,21 +108,10 @@ class _HomePageState extends State<HomePage> {
                         color: AppTheme.white,
                       ),
                     ),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'View all',
-                        style: TextStyle(
-                          color: AppTheme.textBody,
-                          fontFamily: 'Inter',
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ),
+              const SizedBox(height: 6),
               // Recent Groups
               GroupCard(
                 groupName: 'Trip Ifran',

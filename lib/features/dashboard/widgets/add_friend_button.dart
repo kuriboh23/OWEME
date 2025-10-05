@@ -1,5 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:oweme/core/theme.dart';
 
 class AddFriendButton extends StatelessWidget {
@@ -24,7 +25,11 @@ class AddFriendButton extends StatelessWidget {
             child: CircleAvatar(
               backgroundColor: AppTheme.textHeadings.withValues(alpha: 0.1),
               radius: 22, // Adjust size as needed
-              child: Icon(Icons.add, color: AppTheme.white, size: 32),
+              child: Icon(
+                PhosphorIcons.plus_bold,
+                color: AppTheme.white,
+                size: 30,
+              ),
             ),
           ),
           SizedBox(height: 3),
