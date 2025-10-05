@@ -17,6 +17,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppTheme.primaryBackground,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
@@ -70,7 +71,7 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ),
               ),
-      
+
               // Friends
               SizedBox(
                 height: 100,

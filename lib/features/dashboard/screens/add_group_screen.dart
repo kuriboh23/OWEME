@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oweme/core/theme.dart';
 
 class AddGroupScreen extends StatefulWidget {
   const AddGroupScreen({super.key});
@@ -11,6 +12,8 @@ class _AddGroupScreenState extends State<AddGroupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: Text('Add Group Screen')));
+      backgroundColor: AppTheme.primaryBackground,
+      body: SafeArea(child: Text('Add Group Screen')),
+    );
   }
 }

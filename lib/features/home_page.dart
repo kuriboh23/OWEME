@@ -23,15 +23,16 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> _pages = [
     Dashboard(),
-    Center(child: Text('Search')),
     AddGroupScreen(),
-    Center(child: Text('Groups')),
-    Center(child: Text('Profile')),
+    AddGroupScreen(),
+    AddGroupScreen(),
+    AddGroupScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppTheme.primaryBackground,
       // Bottom Nav Bar
       bottomNavigationBar: Container(
         color: AppTheme.gray,
