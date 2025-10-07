@@ -17,7 +17,6 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.primaryBackground,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
@@ -36,16 +35,16 @@ class _DashboardState extends State<Dashboard> {
                       fontFamily: 'Inter',
                       fontSize: 26,
                       fontWeight: FontWeight.w600,
-                      color: AppTheme.white,
+                      color: context.inversePrimary,
                     ),
                   ),
                   GestureDetector(
                     onTap: () {},
                     child: CircleAvatar(
-                      backgroundColor: AppTheme.white,
+                      backgroundColor: context.inversePrimary,
                       child: Icon(
                         PhosphorIcons.bell_simple_fill,
-                        color: AppTheme.primaryColor,
+                        color: context.primary,
                       ),
                     ),
                   ),
@@ -67,7 +66,7 @@ class _DashboardState extends State<Dashboard> {
                     fontFamily: 'Inter',
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
-                    color: AppTheme.white,
+                    color: context.inversePrimary,
                   ),
                 ),
               ),
@@ -106,7 +105,7 @@ class _DashboardState extends State<Dashboard> {
                         fontFamily: 'Inter',
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
-                        color: AppTheme.white,
+                        color: context.inversePrimary,
                       ),
                     ),
                   ],

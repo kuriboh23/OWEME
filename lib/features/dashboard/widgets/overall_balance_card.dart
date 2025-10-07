@@ -34,7 +34,7 @@ class OverallBalanceCard extends StatelessWidget {
                     fontSize: 14,
                     fontFamily: 'Gugi',
                     fontWeight: FontWeight.w600,
-                    color: AppTheme.white,
+                    color: context.inversePrimary,
                   ),
                 ),
                 SizedBox(height: 4),
@@ -42,7 +42,7 @@ class OverallBalanceCard extends StatelessWidget {
                   '$totalBalance DH',
                   style: TextStyle(
                     color: totalBalance >= 0
-                        ? AppTheme.textHeadings
+                        ? context.inversePrimary
                         : AppTheme.negativeAccent,
                     fontSize: 32,
                     fontFamily: 'Gugi',

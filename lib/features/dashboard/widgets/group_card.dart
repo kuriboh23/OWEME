@@ -22,7 +22,7 @@ class GroupCard extends StatelessWidget {
   Widget build(BuildContext context) {
     // Define a reusable text style for body content to keep code DRY
     final bodyTextStyle = TextStyle(
-      color: AppTheme.textBody,
+      color: context.inversePrimary,
       fontFamily: 'Inter',
       fontSize: 12,
       fontWeight: FontWeight.w600,
@@ -56,7 +56,7 @@ class GroupCard extends StatelessWidget {
                         fontFamily: 'Gugi', // Your custom font
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
-                        color: AppTheme.white,
+                        color: context.inversePrimary,
                       ),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -70,7 +70,7 @@ class GroupCard extends StatelessWidget {
                               ? Icons.timelapse_rounded
                               : Icons.lock_clock_rounded,
                           size: 14,
-                          color: AppTheme.textBody,
+                          color: context.inversePrimary,
                         ),
                         const SizedBox(width: 4),
                         Text(
@@ -84,7 +84,7 @@ class GroupCard extends StatelessWidget {
                         Text(
                           '$members Members',
                           style: TextStyle(
-                            color: AppTheme.textBody,
+                            color: context.inversePrimary,
                             fontFamily: 'Inter',
                             fontSize: 12,
                             fontWeight: FontWeight.w700,

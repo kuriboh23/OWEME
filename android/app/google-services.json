@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "530577120175",
+    "project_id": "oweme-64f77",
+    "storage_bucket": "oweme-64f77.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530577120175:android:5308cdbd4575e917142d5a",
+        "android_client_info": {
+          "package_name": "com.example.oweme"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCW2dYPZ0O6iQ5RJ1U6f-U5n1rpRpxpFlI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

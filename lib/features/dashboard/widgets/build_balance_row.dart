@@ -20,8 +20,8 @@ class BuildBalanceRow extends StatelessWidget {
       children: [
         Text(
           label,
-          style: const TextStyle(
-            color: AppTheme.textBody,
+          style:  TextStyle(
+            color: context.inversePrimary,
             fontSize: 14,
             fontFamily: 'Gugi',
             fontWeight: FontWeight.bold,

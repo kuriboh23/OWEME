@@ -27,14 +27,14 @@ class FriendAvatar extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: AppTheme.white,
+              color: context.inversePrimary,
             ),
             child: CircleAvatar(
-              backgroundColor: AppTheme.white,
+              backgroundColor: context.inversePrimary,
               radius: 25, // Adjust size as needed
               child: PhosphorIcon(
                 PhosphorIconsFill.userCircleDashed,
-                color: AppTheme.primaryColor,
+                color: context.primary,
                 size: 30,
               ),
             ),
@@ -46,7 +46,7 @@ class FriendAvatar extends StatelessWidget {
               fontSize: 14,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w600,
-              color: AppTheme.white,
+              color: context.inversePrimary,
             ),
             maxLines: 1, // Ensure name doesn't wrap to a new line
             overflow: TextOverflow.ellipsis,

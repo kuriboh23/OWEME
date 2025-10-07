@@ -17,17 +17,17 @@ class AddFriendButton extends StatelessWidget {
         children: [
           DottedBorder(
             options: CircularDottedBorderOptions(
-              color: AppTheme.white.withValues(alpha: 0.6),
+              color: context.inversePrimary.withValues(alpha: 0.6),
               strokeWidth: 2,
               dashPattern: [14, 6],
               padding: EdgeInsets.all(4),
             ),
             child: CircleAvatar(
-              backgroundColor: AppTheme.textHeadings.withValues(alpha: 0.1),
+              backgroundColor: context.inversePrimary.withValues(alpha: 0.1),
               radius: 22, // Adjust size as needed
               child: Icon(
                 PhosphorIcons.plus_bold,
-                color: AppTheme.white,
+                color: context.inversePrimary,
                 size: 30,
               ),
             ),
@@ -39,7 +39,7 @@ class AddFriendButton extends StatelessWidget {
               fontSize: 14,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w600,
-              color: AppTheme.white,
+              color: context.inversePrimary,
             ),
             maxLines: 1, // Ensure name doesn't wrap to a new line
             overflow: TextOverflow.ellipsis,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:oweme/core/theme.dart';
-import 'package:oweme/features/dashboard/screens/add_group_screen.dart';
+import 'package:oweme/features/AddGroup/screens/add_group_screen.dart';
+import 'package:oweme/features/auth/presentation/screens/login_page.dart';
+import 'package:oweme/features/auth/presentation/screens/register_page.dart';
 import 'package:oweme/features/dashboard/screens/dashboard.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -32,10 +34,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.primaryBackground,
       // Bottom Nav Bar
       bottomNavigationBar: Container(
-        color: AppTheme.gray,
+        color: context.inversePrimary,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 6),
           child: GNav(
@@ -52,19 +53,16 @@ class _HomePageState extends State<HomePage> {
               GButton(icon: PhosphorIcons.users_three_bold, text: 'Groups'),
               GButton(icon: PhosphorIcons.user_bold, text: 'Profile'),
             ],
-            tabBackgroundColor: AppTheme.primaryColor.withValues(alpha: 0.2),
-            backgroundColor: AppTheme.gray,
-            color: AppTheme.primaryBackground,
-            activeColor: AppTheme.primaryBackground,
+            tabBackgroundColor: context.primary.withValues(alpha: 0.2),
+            backgroundColor: context.inversePrimary,
+            color: context.primaryBackground,
+            activeColor: context.primaryBackground,
             padding: EdgeInsets.all(12),
           ),
         ),
       ),
 
-      body: IndexedStack(
-      index: _selectedIndex,
-      children: _pages,
-    ),
+      body: IndexedStack(index: _selectedIndex, children: _pages),
     );
   }
 }
